@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapFlow Editor & Workspace</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="dashboard.css">
+</head>
+<body>
+  <div class="dashboard-layout">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img class="logo-img" src="../assets/icon48.png" alt="SnapFlow Logo" />
+        <span class="logo-text">Snap<span class="logo-accent">Flow</span></span>
+      </div>
+
+      <!-- Account Card -->
+      <div class="sidebar-section">
+        <h3 class="section-title">Account</h3>
+        <div id="account-card-container">
+          <!-- Rendered dynamically by Antigravity -->
+        </div>
+      </div>
+
+      <!-- Google Drive Connection -->
+      <div class="sidebar-section">
+        <h3 class="section-title">Cloud Storage</h3>
+        <div id="gdrive-connection-container">
+          <!-- Rendered dynamically by Antigravity -->
+        </div>
+      </div>
+
+      <!-- Capture History / Cloud Sync -->
+      <div class="sidebar-section flex-grow">
+        <h3 class="section-title">Cloud Captures</h3>
+        <div id="cloud-captures-list" class="captures-list">
+          <div class="list-placeholder">No captures synced yet.</div>
+        </div>
+      </div>
+
+      <!-- Upgrade banner -->
+      <div id="pro-upgrade-banner" class="upgrade-banner">
+        <!-- Rendered dynamically by Antigravity -->
+      </div>
+    </aside>
+
+    <!-- Main Workspace -->
+    <main class="workspace">
+      <!-- Toolbar -->
+      <header class="toolbar">
+        <div class="tool-group">
+          <button class="tool-btn active" data-tool="select" title="Select">
+            <span class="icon">🖱️</span>
+          </button>
+          <button class="tool-btn" data-tool="crop" title="Crop Canvas">
+            <span class="icon">✂️</span>
+          </button>
+          <button class="tool-btn" data-tool="blur" title="Blur Sensitive Info">
+            <span class="icon">👁️‍🗨️</span>
+          </button>
+          <button class="tool-btn" data-tool="arrow" title="Add Arrow">
+            <span class="icon">↗️</span>
+          </button>
+          <button class="tool-btn" data-tool="text" title="Annotate Text">
+            <span class="icon">✍️</span>
+          </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <div class="viewport-toggles">
+          <button class="viewport-btn active" data-viewport="desktop">Desktop</button>
+          <button class="viewport-btn" data-viewport="tablet">Tablet</button>
+          <button class="viewport-btn" data-viewport="mobile">Mobile</button>
+        </div>
+
+        <div class="spacer"></div>
+
+        <div class="action-group">
+          <button id="btn-copy-clipboard" class="btn btn-secondary" title="Copy to Clipboard">
+            <span>📋</span> Copy
+          </button>
+          <div class="dropdown">
+            <button id="btn-download-toggle" class="btn btn-secondary" title="Download Options">
+              <span>💾</span> Download ▾
+            </button>
+            <div id="download-dropdown-menu" class="dropdown-menu">
+              <button id="btn-download-png" class="dropdown-item">PNG Image</button>
+              <button id="btn-download-pdf" class="dropdown-item">PDF Document</button>
+            </div>
+          </div>
+          <!-- Simulation tools to easily test developer flow -->
+          <button id="btn-toggle-pro-test" class="btn btn-secondary">Simulate Premium Purchase</button>
+          <div class="dropdown">
+            <button id="btn-ai-toggle" class="btn btn-secondary" title="AI Toolkit">
+              <span>✨</span> AI Toolkit ▾
+            </button>
+            <div id="ai-dropdown-menu" class="dropdown-menu">
+              <button id="btn-ai-ocr" class="dropdown-item">Extract Text (OCR)</button>
+              <button id="btn-ai-tailwind" class="dropdown-item">Tailwind CSS Convert</button>
+            </div>
+          </div>
+          <button id="btn-cloud-upload" class="btn btn-primary disabled" disabled>
+            <span>▲</span> Save to Google Drive
+          </button>
+        </div>
+      </header>
+
+      <!-- Editing Area / Canvas container -->
+      <section class="canvas-workspace">
+        <div id="canvas-container" class="canvas-container desktop-view">
+          <div class="loader" id="stitching-loader">Stitching capture frames...</div>
+          <canvas id="stitching-canvas"></canvas>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- AI OCR Result Modal -->
+  <div id="modal-ocr" class="modal-overlay">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>✨ AI Extract Text (OCR)</h3>
+        <button id="btn-close-ocr" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <textarea id="ocr-result-text" readonly placeholder="Extracting text..."></textarea>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy-ocr" class="btn btn-primary">Copy Text</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- AI Tailwind CSS Code Preview Modal -->
+  <div id="modal-tailwind" class="modal-overlay modal-large">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h3>✨ AI Tailwind CSS Converter</h3>
+        <button id="btn-close-tailwind" class="modal-close">&times;</button>
+      </div>
+      <div class="modal-tabs">
+        <button id="tab-tailwind-preview" class="tab-btn active">Live Preview</button>
+        <button id="tab-tailwind-code" class="tab-btn">Source Code</button>
+      </div>
+      <div class="modal-body">
+        <div id="tailwind-preview-container" class="tab-content active">
+          <iframe id="tailwind-preview-iframe" src="sandbox.html" sandbox="allow-scripts"></iframe>
+        </div>
+        <div id="tailwind-code-container" class="tab-content">
+          <textarea id="tailwind-code-block" readonly placeholder="Generating code..."></textarea>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-copy-tailwind" class="btn btn-primary">Copy Code</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Onboarding Tour Overlay -->
+  <div id="tour-overlay-container"></div>
+  <button id="btn-start-tour" class="floating-help-btn" title="Start Onboarding Tour">❓ Guide</button>
+
+  <!-- Load Supabase UMD client globally -->
+  <script src="../lib/supabase.js"></script>
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>

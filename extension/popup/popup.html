@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SnapFlow Popup</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="popup.css">
+</head>
+<body>
+  <div class="popup-container">
+    <!-- Header -->
+    <header class="header">
+      <div class="logo-area">
+        <img class="logo-img" src="../assets/icon48.png" alt="SnapFlow Logo" />
+        <span class="logo-text">Snap<span class="logo-accent">Flow</span></span>
+      </div>
+      <div id="premium-badge-container">
+        <!-- Rendered dynamically by Antigravity -->
+      </div>
+    </header>
+
+    <!-- Main Capture Panel -->
+    <main class="main-panel">
+      <button id="btn-capture-viewport" class="btn btn-primary">
+        <span class="icon">📸</span>
+        <span class="btn-text">Capture Viewport</span>
+      </button>
+
+      <button id="btn-capture-fullpage" class="btn btn-secondary">
+        <span class="icon">🚀</span>
+        <span class="btn-text">Capture Full Scroll</span>
+      </button>
+    </main>
+
+    <!-- User & Sync Section -->
+    <footer class="footer">
+      <div id="user-profile-section">
+        <!-- Rendered dynamically by Antigravity -->
+      </div>
+    </footer>
+  </div>
+
+  <!-- Custom Modal Alert inside Popup -->
+  <div id="popup-alert-modal" class="popup-alert-overlay">
+    <div class="popup-alert-card">
+      <div class="popup-alert-header">
+        <span class="popup-alert-icon">⚠️</span>
+        <span id="popup-alert-title" class="popup-alert-title">System Restricted</span>
+      </div>
+      <div id="popup-alert-body" class="popup-alert-body">
+        Chrome restricts capturing full page on system pages.
+      </div>
+      <button id="btn-popup-alert-ok" class="btn btn-primary btn-sm">OK</button>
+    </div>
+  </div>
+
+  <!-- Load Supabase UMD client globally -->
+  <script src="../lib/supabase.js"></script>
+  <script type="module" src="popup.js"></script>
+</body>
+</html>
