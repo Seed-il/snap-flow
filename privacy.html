@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Privacy Policy - SnapFlow</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-color: #d1d5db;
+            --title-color: #ffffff;
+            --accent-color: #3b82f6;
+            --border-color: #1f2937;
+            --muted-text: #9ca3af;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--title-color);
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+            font-weight: 800;
+        }
+
+        .last-updated {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: var(--title-color);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p, ul {
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        .badge {
+            background-color: rgba(59, 130, 246, 0.1);
+            color: var(--accent-color);
+            padding: 0.2rem 0.6rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Privacy Policy</h1>
+            <div class="last-updated">Last updated: July 22, 2026</div>
+        </header>
+
+        <main>
+            <p>Welcome to <strong>SnapFlow</strong>. Your privacy is of paramount importance to us. This Privacy Policy details how we handle user information, permissions, and data security when you use the SnapFlow Chrome Extension and its associated cloud dashboard.</p>
+
+            <h2>1. Information We Collect and Process</h2>
+            <p>SnapFlow is designed around a <strong>"Client-Side First"</strong> philosophy. Most operations, including screen capture rendering, image annotations, and canvas edits, are processed locally in your browser's memory and are never sent to our servers.</p>
+            <ul>
+                <li><strong>Local Screen Captures:</strong> Screen captures are temporarily cached in your browser's local sandbox environment. We do not store or host your screenshots on our servers.</li>
+                <li><strong>AI Analysis Features (OCR & Code Generation):</strong> When you request AI OCR or Tailwind CSS conversion, only the selected region's image data is securely transmitted via HTTPS to Google Gemini AI API endpoints (via Supabase Edge Functions) for real-time processing. This data is not stored or saved by SnapFlow.</li>
+                <li><strong>Google Drive Integration:</strong> If you connect Google Drive, files are uploaded directly from your browser to your personal Google Drive account using Google OAuth tokens. We do not inspect, collect, or store your Google Drive files or credentials.</li>
+            </ul>
+
+            <h2>2. Account and Subscription Data</h2>
+            <p>To manage your Pro Workspace membership status, we use secure third-party services:</p>
+            <ul>
+                <li><strong>Authentication & Profile Management:</strong> Handled securely by Supabase. Your email address and UID are stored securely in Supabase Database.</li>
+                <li><strong>Billing & Subscriptions:</strong> Handled securely by Polar.sh. We do not store or process credit card numbers or banking information.</li>
+            </ul>
+
+            <h2>3. Permissions Required</h2>
+            <p>To function correctly, the SnapFlow Chrome Extension requests the following browser permissions:</p>
+            <ul>
+                <li><span class="badge">activeTab</span>: Used to take screenshots of the active browser tab when you click the capture button.</li>
+                <li><span class="badge">storage</span>: Used to store extension settings and cache your local capture history.</li>
+                <li><span class="badge">identity</span>: Used to manage secure Google OAuth authentication for direct Google Drive backups.</li>
+            </ul>
+
+            <h2>4. Third-Party Services</h2>
+            <p>We work with trusted partners to deliver core features. Their privacy policies govern the use of data on their respective platforms:</p>
+            <ul>
+                <li><a href="https://supabase.com/privacy" target="_blank" rel="noopener noreferrer">Supabase Privacy Policy</a></li>
+                <li><a href="https://polar.sh/legal/privacy" target="_blank" rel="noopener noreferrer">Polar.sh Privacy Policy</a></li>
+                <li><a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">Google Privacy Policy</a> (for Google Drive API and Gemini AI API)</li>
+            </ul>
+
+            <h2>5. Contact Us</h2>
+            <p>If you have any questions, feedback, or concerns regarding your privacy or data usage in SnapFlow, please contact us by creating an issue in our official repository: <a href="https://github.com/Seed-il/snap-flow" target="_blank" rel="noopener noreferrer">SnapFlow GitHub Repository</a>.</p>
+        </main>
+
+        <footer>
+            &copy; 2026 SnapFlow. All rights reserved.
+        </footer>
+    </div>
+</body>
+</html>
