@@ -1,7 +1,7 @@
 {
   "manifest_version": 3,
   "name": "SnapFlow",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAyU6FXwnIq7YQb8jYE6b/RJfSvcS5miAhEVHGa2y0G9DI/th4FqE7ZZHFVq9YdsKxGKH4H54NRanCbQpeHdXlSuGT/uMBMCe8S9OD4rkEQHrW9TskGahB0Zw5dz7PPRtYBXEk6YEN2s+CMMLrHncPV/2qHLdNRRXoEqLclsYgyDA6C69usuqigxinCHhMR+DTT3/yXBAbRJJS9G91Db90bumzPDMEEQJDOhe3/MNxCZFl8BzfdrGcI93Okph+KUc9iCp9gam4vBYdCyuq4jVrFJq4TQH6qsrSpBLULEPxl4hzeoWeCMRTz4baRvKTgA0MDYqlU/868MtCQQAOUvh58QIDAQAB",
   "description": "AI-powered pixel-perfect full-page scrolling capture and annotation dashboard.",
   "icons": {
@@ -24,9 +24,6 @@
       "https://www.googleapis.com/auth/drive.file"
     ]
   },
-  "host_permissions": [
-    "<all_urls>"
-  ],
   "background": {
     "service_worker": "background.js",
     "type": "module"
@@ -45,13 +42,6 @@
     "page": "dashboard/dashboard.html",
     "open_in_tab": true
   },
-  "content_scripts": [
-    {
-      "matches": ["<all_urls>"],
-      "js": ["content.js"],
-      "run_at": "document_start"
-    }
-  ],
   "web_accessible_resources": [
     {
       "resources": [
