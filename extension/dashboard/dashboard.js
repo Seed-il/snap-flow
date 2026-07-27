@@ -935,13 +935,15 @@ async function loadCapturesFromSupabase() {
 // UI Button Listeners & Simulators
 // ----------------------------------------------------
 
-// Purchase simulation toggle
-testProBtn.addEventListener("click", () => {
-  const newProStatus = !store.state.is_premium;
-  store.state.is_premium = newProStatus;
-  const statusStr = newProStatus ? "PRO ACTIVE" : "FREE TIER";
-  showToast(`Premium subscription toggled to [${statusStr}]`, "success");
-});
+// Purchase simulation toggle (if present in developer mode)
+if (testProBtn) {
+  testProBtn.addEventListener("click", () => {
+    const newProStatus = !store.state.is_premium;
+    store.state.is_premium = newProStatus;
+    const statusStr = newProStatus ? "PRO ACTIVE" : "FREE TIER";
+    showToast(`Premium subscription toggled to [${statusStr}]`, "success");
+  });
+}
 
 // Viewport sizes toggles
 document.querySelectorAll(".viewport-btn").forEach((btn) => {
