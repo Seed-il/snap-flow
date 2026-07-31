@@ -2,7 +2,7 @@
 
 SnapFlow is a professional, high-performance Chrome Extension (Manifest v3) designed for developers, designers, and content creators. It provides pixel-perfect full-page scrolling captures, a rich canvas editor, seamless cloud synchronization, and AI-powered intelligence to convert visual designs into functional code.
 
-[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-SnapFlow-blue.svg)](https://chrome.google.com/webstore)
+[![Chrome Web Store](https://img.shields.io/badge/Chrome_Web_Store-SnapFlow-blue.svg)](https://chromewebstore.google.com/detail/snapflow/oohajffdkbdnmmmhjdcnbicpkcjdjiap)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ---
