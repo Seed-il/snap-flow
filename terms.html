@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Terms of Service - SnapFlow</title>
+    <style>
+        :root {
+            --bg-color: #0b0f19;
+            --card-bg: #111827;
+            --text-color: #d1d5db;
+            --title-color: #ffffff;
+            --accent-color: #3b82f6;
+            --border-color: #1f2937;
+            --muted-text: #9ca3af;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.7;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        header {
+            margin-bottom: 3rem;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 2rem;
+        }
+
+        h1 {
+            color: var(--title-color);
+            font-size: 2.5rem;
+            margin: 0 0 1rem 0;
+            font-weight: 800;
+        }
+
+        .last-updated {
+            color: var(--muted-text);
+            font-size: 0.95rem;
+        }
+
+        h2 {
+            color: var(--title-color);
+            font-size: 1.5rem;
+            margin-top: 2.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 1px dashed var(--border-color);
+            padding-bottom: 0.5rem;
+        }
+
+        p, ul {
+            margin-bottom: 1.5rem;
+        }
+
+        li {
+            margin-bottom: 0.5rem;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        a:hover {
+            color: #60a5fa;
+            text-decoration: underline;
+        }
+
+        .alert-box {
+            background-color: rgba(239, 68, 68, 0.1);
+            border-left: 4px solid #ef4444;
+            color: #fca5a5;
+            padding: 1rem;
+            border-radius: 0 8px 8px 0;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+
+        footer {
+            margin-top: 5rem;
+            border-top: 1px solid var(--border-color);
+            padding-top: 2rem;
+            text-align: center;
+            color: var(--muted-text);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Terms of Service</h1>
+            <div class="last-updated">Last updated: August 7, 2026</div>
+        </header>
+
+        <main>
+            <p>Please read these Terms of Service ("Terms") carefully before using the <strong>SnapFlow</strong> Chrome Extension and its associated dashboard services (collectively, the "Service") operated by SnapFlow ("us", "we", or "our").</p>
+
+            <h2>1. Acceptance of Terms</h2>
+            <p>By installing or using our Service, you agree to be bound by these Terms. If you disagree with any part of the Terms, you may not access the Service.</p>
+
+            <h2>2. Disclaimer of Warranties ("AS IS" Provision)</h2>
+            <div class="alert-box">
+                <strong>IMPORTANT NOTICE:</strong> THE SERVICE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS. WE MAKE NO WARRANTIES, EXPRESSED OR IMPLIED, REGARDING THE FUNCTIONALITY, AVAILABILITY, SECURITY, OR RELIABILITY OF THE SERVICE.
+            </div>
+            <p>Due to the nature of web technologies, browser updates, and third-party APIs (including Google APIs and OpenAI/Gemini APIs):</p>
+            <ul>
+                <li>We do not warrant that the Service will be uninterrupted, timely, secure, or free from bugs or errors.</li>
+                <li>We do not warrant that screenshot stitching, AI OCR, or Tailwind CSS code generation will always yield 100% accurate or expected results.</li>
+                <li>Temporary outages, browser API deprecations, or changes in Google/Supabase/Polar policies may temporarily limit or disable features, and we assume no liability for such occurrences.</li>
+            </ul>
+
+            <h2>3. Limitation of Liability</h2>
+            <p>TO THE MAXIMUM EXTENT PERMITTED BY APPLICABLE LAW, IN NO EVENT SHALL WE BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, CONSEQUENTIAL, OR EXEMPLARY DAMAGES (INCLUDING, BUT NOT LIMITED TO, LOSS OF DATA, LOSS OF PROFITS, OR SERVICE INTERRUPTION) ARISING OUT OF THE USE OR INABILITY TO USE THE SERVICE, EVEN IF WE HAVE BEEN ADVISED OF THE POSSIBILITY OF SUCH DAMAGES.</p>
+
+            <h2>4. Subscriptions, Payments & Refund Policy</h2>
+            <p>Our Pro membership plan is managed securely through <strong>Polar.sh</strong>.</p>
+            <ul>
+                <li><strong>Subscriptions:</strong> By subscribing to a monthly or annual plan, you authorize Polar.sh to charge the recurring fee at the beginning of each billing cycle.</li>
+                <li><strong>No-Refund Policy:</strong> Since SnapFlow provides a free tier for initial testing, all paid subscription fees (monthly and annual) are generally <strong>non-refundable</strong>. We do not provide refunds or credits for any partial subscription periods or unused AI runs.</li>
+                <li><strong>Service Outages:</strong> Technical errors, temporary server downtime, or AI service delays do not entitle the user to a refund or compensation. Any refund exceptions are at our sole discretion.</li>
+            </ul>
+
+            <h2>5. Changes to the Service and Terms</h2>
+            <p>We reserve the right, at our sole discretion, to modify or replace these Terms or adjust features within subscription tiers at any time. If a revision is material, we will post the update on our official website/GitHub repository.</p>
+
+            <h2>6. Contact Information</h2>
+            <p>For any questions regarding these Terms or subscription disputes, please submit an issue at our official repository: <a href="https://github.com/Seed-il/snap-flow/issues" target="_blank" rel="noopener noreferrer">SnapFlow GitHub Issues</a>.</p>
+        </main>
+
+        <footer>
+            &copy; 2026 SnapFlow. All rights reserved.
+            <div style="margin-top: 1rem;">
+                <a href="index.html">Home</a> | 
+                <a href="privacy.html">Privacy Policy</a>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
