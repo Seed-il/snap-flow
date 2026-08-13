@@ -211,12 +211,19 @@ function initiateGDriveAuth() {
 
   chrome.identity.getAuthToken({ interactive: true }, (token) => {
     if (chrome.runtime.lastError) {
-      const errMsg = chrome.runtime.lastError.message;
-      console.warn("OAuth failed, falling back to mock simulator:", errMsg);
+      const errMsg = chrome.runtime.lastError.message || "";
+      console.warn("OAuth failed:", errMsg);
+      
+      // If the user explicitly cancelled or denied access, do not fall back to simulator
+      const lowerMsg = errMsg.toLowerCase();
+      if (lowerMsg.includes("cancel") || lowerMsg.includes("approve") || lowerMsg.includes("deny") || lowerMsg.includes("denied")) {
+        showToast("Google Drive connection cancelled.", "error");
+        return;
+      }
       
       showCustomAlert(
         "Google Drive OAuth Failed",
-        `Google OAuth failed with error: "${errMsg}"\n\nThis happens because the Client ID in manifest.json is registered for the production extension ID. Since you loaded SnapFlow as an unpacked extension, Chrome generated a local ID: "${chrome.runtime.id}".\n\nConnecting in Developer Simulation Mode so you can continue testing.`,
+        `Google OAuth failed with error: "${errMsg}"\n\nIf you are testing locally, you can continue in Developer Simulation Mode.`,
         () => {
           simulateGDriveAuth();
         }
