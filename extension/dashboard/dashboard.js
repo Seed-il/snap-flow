@@ -394,6 +394,10 @@ async function stitchCapturedFrames() {
       
       loader.style.display = "none";
       canvas.style.display = "block";
+      
+      // Enable the cloud upload button once canvas is ready
+      cloudUploadBtn.removeAttribute("disabled");
+      cloudUploadBtn.classList.remove("disabled");
     } catch (e) {
       console.error("Canvas stitching failed:", e);
       renderMockCanvas("Stitching Error.");
@@ -418,6 +422,10 @@ async function stitchCapturedFrames() {
       
       loader.style.display = "none";
       canvas.style.display = "block";
+      
+      // Enable the cloud upload button once canvas is ready
+      cloudUploadBtn.removeAttribute("disabled");
+      cloudUploadBtn.classList.remove("disabled");
     };
     img.src = imageSrc;
   }
